@@ -1,0 +1,27 @@
+@import './design_token_variable.css';
+
+$md-sys-elevation-level0: var(--md-sys-elevation-level0);
+$md-sys-elevation-level1: var(--md-sys-elevation-level1);
+$md-sys-elevation-level2: var(--md-sys-elevation-level2);
+$md-sys-elevation-level3: var(--md-sys-elevation-level3);
+$md-sys-elevation-level4: var(--md-sys-elevation-level4);
+$md-sys-elevation-level5: var(--md-sys-elevation-level5);
+
+@mixin elevation-level0{
+    box-shadow: $md-sys-elevation-level0;
+}
+@mixin elevation-level1{
+    box-shadow: $md-sys-elevation-level1;
+}
+@mixin elevation-level2{
+    box-shadow: $md-sys-elevation-level2;
+}
+@mixin elevation-level3{
+    box-shadow: $md-sys-elevation-level3;
+}
+@mixin elevation-level4{
+    box-shadow: $md-sys-elevation-level4;
+}
+@mixin elevation-level5{
+    box-shadow: $md-sys-elevation-level5;
+}

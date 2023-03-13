@@ -1,0 +1,63 @@
+@import '@/Style/elevation.scss';
+.reacterial-button{
+    height: 40px;
+    padding: 0 24px;
+    position: relative;
+
+    border: 0;
+    border-radius: 20px;
+
+    text-align: center;
+    font-size: 18px;
+
+    margin: 10px;
+
+    background: none;
+
+    display: flex;
+    align-items: center;
+
+    &.icon-left{
+        padding-left: 18px;
+    }
+    
+    &.icon-left *:first-child{
+        padding-right: 8px;
+    }
+
+    &.icon-right{
+        padding-right: 18px;
+    }
+
+    &.icon-right *:last-child{
+        padding-left: 8px;
+    }
+
+    &.elevated{
+        @include elevation-level1;
+        // &::after{
+        //     height: 100%;
+        //     width: 100%;
+    
+        //     top: 0;
+        //     left: 0;
+    
+        //     position: absolute;
+        //     content: "";
+            
+        //     border-radius: 20px;
+        // }
+    }
+
+    &.elevated:hover{
+        @include elevation-level2;
+    }
+
+
+    &.text{
+        height: 40px;
+        padding: 0 12px;
+    }
+
+}
+
