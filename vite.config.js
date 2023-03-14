@@ -11,7 +11,15 @@ export default defineConfig({
         },
     },
     plugins: [
-        react({ include: '**/*.tsx' })
+        react({ include: '**/*.tsx' }),
+        copy({
+            targets: [
+                { src: './src/Style/design_token_variable.css', dest: './dist/token' },
+                
+            ],
+            hook: 'writeBundle',
+            verbose: true
+        })
     ],
     css:{
         modules: {

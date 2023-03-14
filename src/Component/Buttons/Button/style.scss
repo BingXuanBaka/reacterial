@@ -1,4 +1,5 @@
 @import '@/Style/elevation.scss';
+@import '@/Style/font.scss';
 .reacterial-button{
     height: 40px;
     padding: 0 24px;
@@ -16,6 +17,12 @@
 
     display: flex;
     align-items: center;
+
+    font-family: $md-sys-typescale-label-large-font;
+    line-height: $md-sys-typescale-label-large-line-height;
+    font-size: $md-sys-typescale-label-large-size;
+    letter-spacing: $md-sys-typescale-label-large-tracking;
+    font-weight: $md-sys-typescale-label-large-weight;
 
     &.icon-left{
         padding-left: 18px;

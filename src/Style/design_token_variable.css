@@ -1,3 +1,8 @@
+@font-face {
+    font-family: RobotoFlex;
+    src: url(./font/RobotoFlex.ttf);
+}
+
 :root{
     /*elevation*/
     --md-sys-elevation-level1: 0 1px 2px #0006;
@@ -9,8 +14,8 @@
     /*ref*/
     --md-ref-typeface-weight-regular: 400;
     --md-ref-typeface-weight-medium: 500;
-    --md-ref-typeface-brand:_;/*regular*/
-    --md-ref-typeface-plain:_;/*medium*/
+    --md-ref-typeface-brand:RobotoFlex;/*regular*/
+    --md-ref-typeface-plain:RobotoFlex;/*medium*/
 
     
     /*typography*/
