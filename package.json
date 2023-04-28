@@ -26,7 +26,8 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vite build"
+    "build": "vite build",
+    "dev": "vite --config ./vite.config.dev.js serve demo"
   },
   "dependencies": {
     "@material/material-color-utilities": "^0.2.4",
@@ -36,5 +37,7 @@
   "files": [
     "src/*",
     "dist/*"
-  ]
+  ],
+  "repository": "https://github.com/BingXuanOwO/reacterial.git",
+  "author": "BingXuanOwO <hxc35459@outlook.com>"
 }
