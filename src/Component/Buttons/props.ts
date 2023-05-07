@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export interface ButtonProps {
-  children: ReactNode,
+  children?: ReactNode,
   className?: string,
   disable?: boolean,
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
@@ -25,13 +25,18 @@ export interface IconButtonProps extends ButtonProps {
 }
 
 export interface FABProps extends ButtonProps {
-  size?: "normal"
+  type?: "normal"
     | "extended"
     | "small"
     | "large"
     | undefined,
 
   label?: string,
+  color?: "primary"
+    | "secondary"
+    | "tertiary"
+    | "surface"
+    | undefined
 
 }
 
