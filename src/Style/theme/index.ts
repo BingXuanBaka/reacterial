@@ -22,7 +22,6 @@ function getIsDark (): boolean{
 
 function getTheme (): Theme {
     const theme = useContext(ThemeContext).theme
-    console.log(theme)
     return theme
 }
 

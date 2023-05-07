@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Button,
   FAB,
@@ -13,6 +13,7 @@ import {
 import './style.css'
 
 function App() {
+  const [extended, setExtended] = useState(true)
   return (
     <>
       {/* <ThemeContext.Provider
@@ -39,11 +40,11 @@ function App() {
                   <path d="M200 856h56l345-345-56-56-345 345v56Zm572-403L602 285l56-56q23-23 56.5-23t56.5 23l56 56q23 23 24 55.5T829 396l-57 57Zm-58 59L290 936H120V766l424-424 170 170Zm-141-29-28-28 56 56-28-28Z"/>
                 </svg>
               </FAB>
-              {/* <FAB type='extended' label='Hello!'>
+              <FAB type={extended?'extended':'normal'} label='Hello!' onClick={()=>{setExtended(!extended)}}>
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
                   <path d="M200 856h56l345-345-56-56-345 345v56Zm572-403L602 285l56-56q23-23 56.5-23t56.5 23l56 56q23 23 24 55.5T829 396l-57 57Zm-58 59L290 936H120V766l424-424 170 170Zm-141-29-28-28 56 56-28-28Z"/>
                 </svg>
-              </FAB> */}
+              </FAB>
               <FAB type='large'>
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
                   <path d="M200 856h56l345-345-56-56-345 345v56Zm572-403L602 285l56-56q23-23 56.5-23t56.5 23l56 56q23 23 24 55.5T829 396l-57 57Zm-58 59L290 936H120V766l424-424 170 170Zm-141-29-28-28 56 56-28-28Z"/>

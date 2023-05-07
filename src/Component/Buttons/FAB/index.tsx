@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 
 import {
@@ -8,13 +8,16 @@ import {
 
 import { FABProps } from '../props';
 import genStyle from './style'
+import classnames from 'classnames';
 
 export function FAB(props: FABProps): JSX.Element {
     let theme = getTheme();
     let style = genStyle(theme, getIsDark())
+    let [labelLength, setLabelLength] = useState(0);
     return (
         <button
             onClick={props.onClick}
+            style={props.type == "extended" && labelLength > 0 ? { width: labelLength + 24 + 32 } : {}}
             className={classNames(
                 style.default,
 
@@ -36,7 +39,23 @@ export function FAB(props: FABProps): JSX.Element {
             <span className={
                 props.type == 'large' ? style.iconLarge : style.icon
             }>{props.children}</span>
-            <span>{props.label}</span>
+
+            <label
+                className={classnames(
+                    style.label,
+                    props.type == "extended" && 'shown'
+                )}
+                style={
+                    props.type == "extended" && labelLength > 0 ? {
+                        width: labelLength
+                    } : {}
+                }
+
+                ref={(el) => {
+                    if (el) setLabelLength(el.scrollWidth)
+                }}>{props.label}</label>
+
+
         </button>
     )
 

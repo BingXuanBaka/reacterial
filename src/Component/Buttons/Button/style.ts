@@ -8,7 +8,6 @@ import {
 } from "@/Style";
 
 export default (theme: Theme, dark: boolean) => {
-    console.log(theme)
     let scheme = dark ? theme.schemes.dark : theme.schemes.light
     return {
         default: css({

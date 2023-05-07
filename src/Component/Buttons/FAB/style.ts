@@ -8,7 +8,6 @@ import {
 } from "@/Style";
 
 export default (theme: Theme, dark: boolean) => {
-    console.log(theme)
     let scheme = dark ? theme.schemes.dark : theme.schemes.light
     return {
         default: css({
@@ -21,6 +20,7 @@ export default (theme: Theme, dark: boolean) => {
             // justifyContent: 'center',
             boxSizing: 'border-box',
             transition: '.3s',
+            overflow: 'hidden',
             
             '&::after': {
                 height: '100%',
@@ -47,6 +47,7 @@ export default (theme: Theme, dark: boolean) => {
                 opacity: 0.12
             },
         }),
+
         icon: css({
             height: 24,
             width: 24,
@@ -56,6 +57,15 @@ export default (theme: Theme, dark: boolean) => {
             height: 36,
             width: 36,
             fontSize: 36
+        }),
+        label:css({
+            transition: '0.3s',
+            opacity: 0,
+            paddingLeft: 16,
+            overflow: "hidden",
+            '&.shown':{
+                opacity: 1,
+            }
         }),
 
         normal: css({
@@ -70,12 +80,11 @@ export default (theme: Theme, dark: boolean) => {
 
         extended: css({
             height: 56,
-            width: 56,
             padding: 16,
             borderRadius: 16,
             '&::after':{
                 borderRadius: 16
-            }
+            },
         }),
 
         small: css({
