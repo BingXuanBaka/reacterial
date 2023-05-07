@@ -14,6 +14,7 @@ export function Button(props: CommonButtonProps): JSX.Element {
     let style = genStyle(theme, getIsDark())
     return (
         <button
+            onClick={props.onClick}
             className={classNames(
                 style.default,
 
