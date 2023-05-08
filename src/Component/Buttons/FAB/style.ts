@@ -53,11 +53,6 @@ export default (theme: Theme, dark: boolean) => {
             width: 24,
             fontSize: 24
         }),
-        iconLarge: css({
-            height: 36,
-            width: 36,
-            fontSize: 36
-        }),
         label:css({
             transition: '0.3s',
             opacity: 0,
@@ -109,7 +104,7 @@ export default (theme: Theme, dark: boolean) => {
             '*':{
                 height: 36,
                 width: 36,
-                fontSize: 36,
+                fontSize: '36px!important'
             }
         }),
 

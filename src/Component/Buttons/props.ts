@@ -18,10 +18,13 @@ export interface CommonButtonProps extends ButtonProps {
 }
 
 export interface IconButtonProps extends ButtonProps {
-  type?: "basic"
+  type?: "standard"
     | "filled"
+    | "tonal"
     | "outlined"
     | undefined,
+
+  selected ?: boolean
 }
 
 export interface FABProps extends ButtonProps {

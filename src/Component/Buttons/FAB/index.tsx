@@ -36,9 +36,7 @@ export function FAB(props: FABProps): JSX.Element {
 
             )}>
 
-            <span className={
-                props.type == 'large' ? style.iconLarge : style.icon
-            }>{props.children}</span>
+            <span className={style.icon}>{props.children}</span>
 
             <label
                 className={classnames(
