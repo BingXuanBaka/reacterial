@@ -106,7 +106,7 @@ export default (theme: Theme, dark: boolean) => {
             background: 'none',
             outline: `
                 ${hexFromArgb(scheme.outline)}
-                solid 1px
+                solid 1.4px
                 `,
             color: hexFromArgb(scheme.primary),
             
