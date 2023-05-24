@@ -30,7 +30,7 @@ export function IconButton(props: IconButtonProps): JSX.Element {
                 
             )}>
 
-            <span>{props.children}</span>
+            {props.children}
         </button>
     )
 

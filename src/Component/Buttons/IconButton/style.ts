@@ -17,8 +17,6 @@ export default (theme: Theme, dark: boolean) => {
             border: 0,
             borderRadius: 24,
 
-            margin: 10,
-
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',

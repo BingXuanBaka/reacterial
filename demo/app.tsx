@@ -4,6 +4,7 @@ import {
   FAB,
   IconButton,
   ThemeContext,
+  Topbar,
   getTheme
 
 } from '../src';
@@ -23,7 +24,28 @@ function App() {
       {/* <ThemeContext.Provider
         value={{ theme: themeFromSourceColor(argbFromHex("#000066")) }}> */}
       <div className='mainContainer' style={{ flex: 1, backgroundColor: hexFromArgb(getTheme().schemes.dark.background) }}>
-        <div className='buttons'>
+        <Topbar
+          leading={
+            <IconButton type='standard'>
+              <span className="material-symbols-outlined">
+                menu
+              </span>
+            </IconButton>
+          }
+          headline={
+            "hello world!"
+          }
+          trailing={
+            <IconButton type='standard'>
+              <span className="material-symbols-outlined">
+                edit
+              </span>
+            </IconButton>
+          }
+
+        />
+
+        <div className='buttons' style={{ margin: 4 }}>
           <Button>Filled</Button>
           <Button type='filled'>Filled</Button>
           <Button type='tonal'>Filled Tonal</Button>
@@ -82,8 +104,8 @@ function App() {
 
 
         </div>
-        <div className='iconButtons'>
-          <div style={{ display: 'flex' }}>
+        <div className='iconButtons' style={{ display: 'flex', rowGap: 12, flexDirection: 'column', margin: 4 }}>
+          <div style={{ display: 'flex', columnGap: 12 }}>
             <IconButton type='standard'>
               <span className="material-symbols-outlined">
                 edit
@@ -105,23 +127,23 @@ function App() {
               </span>
             </IconButton>
           </div>
-          <div style={{ display: 'flex' }}>
-            <IconButton type='standard' onClick={()=>setIconBtnSelected(!iconBtnSelected)} selected={iconBtnSelected}>
+          <div style={{ display: 'flex', columnGap: 12 }}>
+            <IconButton type='standard' onClick={() => setIconBtnSelected(!iconBtnSelected)} selected={iconBtnSelected}>
               <span className="material-symbols-outlined">
                 edit
               </span>
             </IconButton>
-            <IconButton type='filled' onClick={()=>setIconBtnSelected(!iconBtnSelected)} selected={iconBtnSelected}>
+            <IconButton type='filled' onClick={() => setIconBtnSelected(!iconBtnSelected)} selected={iconBtnSelected}>
               <span className="material-symbols-outlined">
                 edit
               </span>
             </IconButton>
-            <IconButton type='tonal' onClick={()=>setIconBtnSelected(!iconBtnSelected)} selected={iconBtnSelected}>
+            <IconButton type='tonal' onClick={() => setIconBtnSelected(!iconBtnSelected)} selected={iconBtnSelected}>
               <span className="material-symbols-outlined">
                 edit
               </span>
             </IconButton>
-            <IconButton type='outlined' onClick={()=>setIconBtnSelected(!iconBtnSelected)} selected={iconBtnSelected}>
+            <IconButton type='outlined' onClick={() => setIconBtnSelected(!iconBtnSelected)} selected={iconBtnSelected}>
               <span className="material-symbols-outlined">
                 edit
               </span>
