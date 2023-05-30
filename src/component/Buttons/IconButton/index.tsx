@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { 
     getIsDark, 
     getTheme 
-} from '@/Style/index';
+} from '@/style/index';
 
 import { IconButtonProps } from '../props';
 import genStyle from './style'

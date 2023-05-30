@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import {
     getIsDark,
     getTheme
-} from '@/Style';
+} from '@/style';
 
 import { FABProps } from '../props';
 import genStyle from './style'

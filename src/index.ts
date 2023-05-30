@@ -1,8 +1,8 @@
 import { applyTheme, argbFromHex, themeFromSourceColor } from '@material/material-color-utilities'
 
-export * from './Component/Buttons'
-export * from './Component/Topbar'
-export * from './Component/Surface'
-export * from './Style'
+export * from './component/Buttons'
+export * from './component/Topbar'
+export * from './component/Surface'
+export * from './style'
 
 applyTheme(themeFromSourceColor(argbFromHex("6751a5")))

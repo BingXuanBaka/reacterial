@@ -5,7 +5,7 @@ import {
     getIsDark,
     getTheme,
     typography
-} from '@/Style';
+} from '@/style';
 
 import { css } from '@emotion/css';
 import { Scheme, hexFromArgb } from '@material/material-color-utilities';

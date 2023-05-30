@@ -8,7 +8,7 @@ import {
     getIsDark,
     getTheme,
     getSurfaceElevationColor
-} from "@/Style";
+} from "@/style";
 
 import classNames from "classnames";
 import React, {

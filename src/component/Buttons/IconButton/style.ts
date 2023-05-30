@@ -2,28 +2,23 @@ import { Hct, Theme, hexFromArgb } from "@material/material-color-utilities";
 import { css } from '@emotion/css'
 
 import { 
-    typography, 
     elevation, 
     getSurfaceColorFromScheme 
-} from "@/Style";
+} from "@/style";
 
 export default (theme: Theme, dark: boolean) => {
     let scheme = dark ? theme.schemes.dark : theme.schemes.light
     return {
         default: css({
-            ...typography.label.large,
-            height: 40,
-            padding: '0 24px',
+            height: 48,
+            width: 48,
             position: 'relative',
 
             border: 0,
-            borderRadius: 20,
-
-            textAlign: 'center',
-
-            margin: 10,
+            borderRadius: 24,
 
             display: 'flex',
+            justifyContent: 'center',
             alignItems: 'center',
             boxSizing: 'border-box',
 
@@ -33,7 +28,7 @@ export default (theme: Theme, dark: boolean) => {
                 height: '100%',
                 width: '100%',
                 position: 'absolute',
-                borderRadius: 20,
+                borderRadius: 24,
                 content: '""',
                 left: 0,
                 top: 0,
@@ -48,24 +43,39 @@ export default (theme: Theme, dark: boolean) => {
             '&:active::after': {
                 opacity: 0.12
             },
+
+            '&.selected':{
+                fontVariationSettings: '"FILL" 1'
+            }
+        }),
+
+        standard : css({
+            background: 'none',
+            padding: '0 12px',
+            color: hexFromArgb(scheme.onSurfaceVariant),
+                        
+            '&::after': {
+                backgroundColor: hexFromArgb(scheme.onSurface),
+            },
+
+            '&.selected':{
+                color: hexFromArgb(scheme.primary),
+            }
         }),
 
         filled: css({
-            padding: '0 24px',
             backgroundColor: hexFromArgb(scheme.primary),
             color: hexFromArgb(scheme.onPrimary),
             boxSizing: 'border-box',
-
 
             '&::after': {
                 backgroundColor: hexFromArgb(scheme.onPrimary),
             },
 
-            '&:hover': {
-                ...elevation.level1
-            },
-            '&:active': {
-                boxShadow: ""
+
+            '&.unselected':{
+                color: hexFromArgb(scheme.primary),
+                backgroundColor: hexFromArgb(getSurfaceColorFromScheme(scheme).surface3)
             },
         }),
 
@@ -77,22 +87,10 @@ export default (theme: Theme, dark: boolean) => {
                 backgroundColor: hexFromArgb(scheme.onSecondaryContainer),
             },
 
-            '&:hover': {
-                ...elevation.level1
-            },
-            '&:active': {
-                boxShadow: ""
-            },
 
-        }),
-
-        elevated: css({
-            color: hexFromArgb(scheme.primary),
-            backgroundColor: hexFromArgb(getSurfaceColorFromScheme(scheme).surface3),
-            ...elevation.level1,
-
-            '&::after': {
-                backgroundColor: hexFromArgb(scheme.primary),
+            '&.unselected':{
+                color: hexFromArgb(scheme.primary),
+                backgroundColor: hexFromArgb(getSurfaceColorFromScheme(scheme).surface3)
             },
         }),
 
@@ -102,22 +100,20 @@ export default (theme: Theme, dark: boolean) => {
                 ${hexFromArgb(scheme.outline)}
                 solid 1.4px
                 `,
-            color: hexFromArgb(scheme.primary),
+            color: hexFromArgb(scheme.onSurfaceVariant),
             
             '&::after': {
                 backgroundColor: hexFromArgb(scheme.onSurface),
             },
+
+            '&.selected': {
+                backgroundColor: hexFromArgb(scheme.inverseSurface),
+                outline: 'none',
+                color: hexFromArgb(scheme.inverseOnSurface),
+            }
         }),
 
-        text: css({
-            background: 'none',
-            padding: '0 12px',
-            color: hexFromArgb(scheme.primary),
-                        
-            '&::after': {
-                backgroundColor: hexFromArgb(scheme.onSurface),
-            },
-        })
+
 
     }
 }

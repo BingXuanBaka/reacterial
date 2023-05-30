@@ -5,7 +5,7 @@ import {
     typography,
     elevation,
     getSurfaceColorFromScheme
-} from "@/Style";
+} from "@/style";
 
 export default (theme: Theme, dark: boolean) => {
     let scheme = dark ? theme.schemes.dark : theme.schemes.light
