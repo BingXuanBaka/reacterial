@@ -3,19 +3,18 @@ import classNames from 'classnames';
 
 import {
     getIsDark,
-    getTheme
+    getTheme,
+    typography
+} from '@/Style';
 
-} from '@/Style/index';
-
-import genStyle from './style'
 import { css } from '@emotion/css';
-import { typography } from '@/Style';
 import { Scheme, hexFromArgb } from '@material/material-color-utilities';
 
 interface TopbarProps {
     leading?: ReactNode,
     headline?: ReactNode,
-    trailing?: ReactNode
+    trailing?: ReactNode,
+    className?: string,
 }
 
 export function Topbar(props: TopbarProps) {
@@ -23,13 +22,16 @@ export function Topbar(props: TopbarProps) {
         getTheme().schemes.dark :
         getTheme().schemes.light
     return (
-        <div className={css({
-            height: 64,
-            display: 'flex',
-            alignItems: 'center',
-            margin: '0 4px',
-            columnGap: 4
-        })}>
+        <div className={classNames(
+            props.className,
+            css({
+                height: 64,
+                display: 'flex',
+                alignItems: 'center',
+                margin: '0 4px',
+                columnGap: 4
+            })
+        )}>
             <div>
                 {props.leading}
             </div>

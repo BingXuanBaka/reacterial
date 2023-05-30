@@ -3,6 +3,7 @@ import {
   Button,
   FAB,
   IconButton,
+  Surface,
   ThemeContext,
   Topbar,
   getTheme
@@ -14,6 +15,7 @@ import {
   hexFromArgb
 } from '@material/material-color-utilities';
 import './style.css'
+import { css } from '@emotion/css';
 
 function App() {
   const [extended, setExtended] = useState(true)
@@ -23,7 +25,7 @@ function App() {
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
       {/* <ThemeContext.Provider
         value={{ theme: themeFromSourceColor(argbFromHex("#000066")) }}> */}
-      <div className='mainContainer' style={{ flex: 1, backgroundColor: hexFromArgb(getTheme().schemes.dark.background) }}>
+      <Surface className={css({ flex: 1 })}>
         <Topbar
           leading={
             <IconButton type='standard'>
@@ -150,7 +152,7 @@ function App() {
             </IconButton>
           </div>
         </div>
-      </div>
+      </Surface>
 
       {/* </ThemeContext.Provider> */}
     </>
