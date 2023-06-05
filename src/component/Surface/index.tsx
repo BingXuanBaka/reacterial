@@ -16,8 +16,8 @@ import React, {
 } from "react";
 
 interface SurfaceProps {
-    children: ReactNode,
-    className: string,
+    children?: ReactNode,
+    className?: string,
     elevation?: 0 | 1 | 2 | 3 | 4 | 5 | undefined,
 }
 

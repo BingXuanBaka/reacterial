@@ -3,6 +3,5 @@ import { applyTheme, argbFromHex, themeFromSourceColor } from '@material/materia
 export * from './component/Buttons'
 export * from './component/Topbar'
 export * from './component/Surface'
+export * from './component/Card'
 export * from './style'
-
-applyTheme(themeFromSourceColor(argbFromHex("6751a5")))

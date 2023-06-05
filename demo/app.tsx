@@ -1,30 +1,30 @@
 import React, { useState } from 'react'
 import {
   Button,
+  Card,
   FAB,
   IconButton,
   Surface,
   ThemeContext,
   Topbar,
-  getTheme
-
 } from '../src';
-import {
-  themeFromSourceColor,
-  argbFromHex,
-  hexFromArgb
-} from '@material/material-color-utilities';
 import './style.css'
 import { css } from '@emotion/css';
+import {
+  argbFromHex,
+  themeFromSourceColor
+} from '@material/material-color-utilities';
 
 function App() {
   const [extended, setExtended] = useState(true)
   const [iconBtnSelected, setIconBtnSelected] = useState(true)
   return (
     <>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-      {/* <ThemeContext.Provider
-        value={{ theme: themeFromSourceColor(argbFromHex("#000066")) }}> */}
+      <link rel="stylesheet"
+        href={"https://fonts.googleapis.com/css2?" +
+          "family=Material+Symbols+Outlined:opsz,wght,FILL," +
+          "GRAD@20..48,100..700,0..1,-50..200"
+        } />
       <Surface className={css({ flex: 1 })}>
         <Topbar
           leading={
@@ -68,7 +68,9 @@ function App() {
                 edit
               </span>
             </FAB>
-            <FAB type={extended ? 'extended' : 'normal'} label='Hello!' onClick={() => { setExtended(!extended) }}>
+            <FAB type={extended ? 'extended' : 'normal'}
+              label='Hello!'
+              onClick={() => { setExtended(!extended) }}>
               <span className="material-symbols-outlined">
                 edit
               </span>
@@ -78,7 +80,6 @@ function App() {
                 edit
               </span>
             </FAB>
-
           </span>
           <span style={{ display: 'flex' }}>
             <FAB>
@@ -106,7 +107,12 @@ function App() {
 
 
         </div>
-        <div className='iconButtons' style={{ display: 'flex', rowGap: 12, flexDirection: 'column', margin: 4 }}>
+        <div className='iconButtons' style={{
+          display: 'flex',
+          rowGap: 12,
+          flexDirection: 'column',
+          margin: 4
+        }}>
           <div style={{ display: 'flex', columnGap: 12 }}>
             <IconButton type='standard'>
               <span className="material-symbols-outlined">
@@ -130,31 +136,85 @@ function App() {
             </IconButton>
           </div>
           <div style={{ display: 'flex', columnGap: 12 }}>
-            <IconButton type='standard' onClick={() => setIconBtnSelected(!iconBtnSelected)} selected={iconBtnSelected}>
+            <IconButton type='standard'
+              onClick={() => setIconBtnSelected(!iconBtnSelected)}
+              selected={iconBtnSelected}>
               <span className="material-symbols-outlined">
                 edit
               </span>
             </IconButton>
-            <IconButton type='filled' onClick={() => setIconBtnSelected(!iconBtnSelected)} selected={iconBtnSelected}>
+            <IconButton type='filled'
+              onClick={() => setIconBtnSelected(!iconBtnSelected)}
+              selected={iconBtnSelected}>
               <span className="material-symbols-outlined">
                 edit
               </span>
             </IconButton>
-            <IconButton type='tonal' onClick={() => setIconBtnSelected(!iconBtnSelected)} selected={iconBtnSelected}>
+            <IconButton type='tonal'
+              onClick={() => setIconBtnSelected(!iconBtnSelected)}
+              selected={iconBtnSelected}>
               <span className="material-symbols-outlined">
                 edit
               </span>
             </IconButton>
-            <IconButton type='outlined' onClick={() => setIconBtnSelected(!iconBtnSelected)} selected={iconBtnSelected}>
+            <IconButton type='outlined'
+              onClick={() => setIconBtnSelected(!iconBtnSelected)}
+              selected={iconBtnSelected}>
               <span className="material-symbols-outlined">
                 edit
               </span>
             </IconButton>
           </div>
         </div>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'row',
+          margin: 4,
+          columnGap: 4
+        }}>
+          <Card
+            type='elevated'
+            style={{ height: 100, width: '100%' }}>
+            <span>elevated</span>
+          </Card>
+          <Card
+            type='filled'
+            style={{ height: 100, width: '100%' }}>
+            <span>filled</span>
+          </Card>
+          <Card
+            type='outlined'
+            style={{ height: 100, width: '100%' }}>
+            <span>outlined</span>
+          </Card>
+        </div>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'row',
+          margin: 4,
+          columnGap: 4
+        }}>
+          <Card
+            onClick={()=>{alert("clicked")}}
+            type='elevated'
+            style={{ height: 100, width: '100%' }}>
+            <span>elevated clickable</span>
+          </Card>
+          <Card
+            onClick={()=>{alert("clicked")}}
+            type='filled'
+            style={{ height: 100, width: '100%' }}>
+            <span>filled clickable</span>
+          </Card>
+          <Card
+            onClick={()=>{alert("clicked")}}
+            type='outlined'
+            style={{ height: 100, width: '100%' }}>
+            <span>outlined clickable</span>
+          </Card>
+        </div>
       </Surface>
 
-      {/* </ThemeContext.Provider> */}
     </>
   )
 }

@@ -5,7 +5,7 @@
         "experimentalDecorators": true,
         "jsx": "react",
         "outDir": "./dist",
-        "baseUrl": "./src",
+        "baseUrl": "./",
         "traceResolution": false,
         "sourceMap": true,
         "noImplicitAny": true,
