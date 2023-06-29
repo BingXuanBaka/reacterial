@@ -1,5 +1,28 @@
 import './font.css'
-export default {
+
+interface TypographyTokenValue {
+   fontFamily: string,
+   lineHeight: string,
+   fontSize: number,
+   letterSpacing: number,
+   fontWeight: number
+}
+
+interface TypographyLevels{
+    large: TypographyTokenValue,
+    medium: TypographyTokenValue,
+    small: TypographyTokenValue
+}
+
+interface TypographyStyles {
+    display: TypographyLevels
+    headline: TypographyLevels
+    title: TypographyLevels
+    label: TypographyLevels
+    body: TypographyLevels
+}
+
+const Typography: TypographyStyles  = {
     display: {
         large: {
             fontFamily: "RobotoFlex",
@@ -114,5 +137,6 @@ export default {
             fontWeight: 500,
         },
     }
-
 }
+
+export default Typography
