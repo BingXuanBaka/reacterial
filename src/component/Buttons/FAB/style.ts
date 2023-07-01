@@ -2,7 +2,7 @@ import { Hct, Theme, hexFromArgb } from "@material/material-color-utilities";
 import { css } from '@emotion/css'
 
 import {
-    typography,
+    typescales,
     elevation,
     getSurfaceColorFromScheme
 } from "@/style";

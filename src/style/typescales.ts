@@ -1,6 +1,6 @@
 import './font.css'
 
-interface TypographyTokenValue {
+interface TypeScaleLevelValue {
    fontFamily: string,
    lineHeight: string,
    fontSize: number,
@@ -8,38 +8,38 @@ interface TypographyTokenValue {
    fontWeight: number
 }
 
-interface TypographyLevels{
-    large: TypographyTokenValue,
-    medium: TypographyTokenValue,
-    small: TypographyTokenValue
+interface TypeScaleLevels{
+    large: TypeScaleLevelValue,
+    medium: TypeScaleLevelValue,
+    small: TypeScaleLevelValue
 }
 
-interface TypographyStyles {
-    display: TypographyLevels
-    headline: TypographyLevels
-    title: TypographyLevels
-    label: TypographyLevels
-    body: TypographyLevels
+interface TypeScalesType {
+    display: TypeScaleLevels
+    headline: TypeScaleLevels
+    title: TypeScaleLevels
+    label: TypeScaleLevels
+    body: TypeScaleLevels
 }
 
-const Typography: TypographyStyles  = {
+const TypeScales: TypeScalesType  = {
     display: {
         large: {
-            fontFamily: "RobotoFlex",
+            fontFamily: "RobotoFlex,Roboto,system-ui,sans-serif",
             lineHeight: '64px',
             fontSize: 57,
             letterSpacing: 0,
             fontWeight: 400,
         },
         medium: {
-            fontFamily: "RobotoFlex",
+            fontFamily: "RobotoFlex,Roboto,system-ui,sans-serif",
             lineHeight: '52px',
             fontSize: 45,
             letterSpacing: 0,
             fontWeight: 400,
         },
         small: {
-            fontFamily: "RobotoFlex",
+            fontFamily: "RobotoFlex,Roboto,system-ui,sans-serif",
             lineHeight: '44px',
             fontSize: 36,
             letterSpacing: 0,
@@ -48,21 +48,21 @@ const Typography: TypographyStyles  = {
     },
     headline:{
         large: {
-            fontFamily: "RobotoFlex",
+            fontFamily: "RobotoFlex,Roboto,system-ui,sans-serif",
             lineHeight: '40px',
             fontSize: 32,
             letterSpacing: 0,
             fontWeight: 400,
         },        
         medium: {
-            fontFamily: "RobotoFlex",
+            fontFamily: "RobotoFlex,Roboto,system-ui,sans-serif",
             lineHeight: '36px',
             fontSize: 28,
             letterSpacing: 0,
             fontWeight: 400,
         },
         small: {
-            fontFamily: "RobotoFlex",
+            fontFamily: "RobotoFlex,Roboto,system-ui,sans-serif",
             lineHeight: '32px',
             fontSize: 24,
             letterSpacing: 0,
@@ -70,21 +70,21 @@ const Typography: TypographyStyles  = {
         },
     },title:{
         large: {
-            fontFamily: "RobotoFlex",
+            fontFamily: "RobotoFlex,Roboto,system-ui,sans-serif",
             lineHeight: '28px',
             fontSize: 22,
             letterSpacing: 0,
             fontWeight: 400,
         },        
         medium: {
-            fontFamily: "RobotoFlex",
+            fontFamily: "RobotoFlex,Roboto,system-ui,sans-serif",
             lineHeight: '24px',
             fontSize: 16,
             letterSpacing: 0.15,
             fontWeight: 400,
         },
         small: {
-            fontFamily: "RobotoFlex",
+            fontFamily: "RobotoFlex,Roboto,system-ui,sans-serif",
             lineHeight: '20px',
             fontSize: 14,
             letterSpacing: 0,
@@ -93,21 +93,21 @@ const Typography: TypographyStyles  = {
     },
     label: {
         large: {
-            fontFamily: "RobotoFlex",
+            fontFamily: "RobotoFlex,Roboto,system-ui,sans-serif",
             lineHeight: '20px',
             fontSize: 14,
             letterSpacing: 0.1,
             fontWeight: 500,
         },
         medium: {
-            fontFamily: "RobotoFlex",
+            fontFamily: "RobotoFlex,Roboto,system-ui,sans-serif",
             lineHeight: '16px',
             fontSize: 12,
             letterSpacing: 0.5,
             fontWeight: 500,
         },
         small: {
-            fontFamily: "RobotoFlex",
+            fontFamily: "RobotoFlex,Roboto,system-ui,sans-serif",
             lineHeight: '16px',
             fontSize: 11,
             letterSpacing: 0.5,
@@ -116,21 +116,21 @@ const Typography: TypographyStyles  = {
     },
     body: {
         large: {
-            fontFamily: "RobotoFlex",
+            fontFamily: "RobotoFlex,Roboto,system-ui,sans-serif",
             lineHeight: '24px',
             fontSize: 16,
             letterSpacing: 0.5,
             fontWeight: 500,
         },
         medium: {
-            fontFamily: "RobotoFlex",
+            fontFamily: "RobotoFlex,Roboto,system-ui,sans-serif",
             lineHeight: '20px',
             fontSize: 14,
             letterSpacing: 0.25,
             fontWeight: 500,
         },
         small: {
-            fontFamily: "RobotoFlex",
+            fontFamily: "RobotoFlex,Roboto,system-ui,sans-serif",
             lineHeight: '16px',
             fontSize: 12,
             letterSpacing: 0.4,
@@ -139,4 +139,4 @@ const Typography: TypographyStyles  = {
     }
 }
 
-export default Typography
+export default TypeScales

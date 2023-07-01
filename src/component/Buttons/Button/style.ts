@@ -2,7 +2,7 @@ import { Hct, Theme, hexFromArgb } from "@material/material-color-utilities";
 import { css } from '@emotion/css'
 
 import { 
-    typography, 
+    typescales, 
     elevation, 
     getSurfaceColorFromScheme 
 } from "@/style";
@@ -11,7 +11,7 @@ export default (theme: Theme, dark: boolean) => {
     let scheme = dark ? theme.schemes.dark : theme.schemes.light
     return {
         default: css({
-            ...typography.label.large,
+            ...typescales.label.large,
             height: 40,
             padding: '0 24px',
             position: 'relative',

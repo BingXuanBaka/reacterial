@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import {
     getIsDark,
     getTheme,
-    typography
+    typescales
 } from '@/style';
 
 import { css } from '@emotion/css';
@@ -37,7 +37,7 @@ export function Topbar(props: TopbarProps) {
             </div>
             <span className={css({
                 flex: 1,
-                ...typography.title.large,
+                ...typescales.title.large,
                 color: hexFromArgb(scheme.onSurface)
             })}>
                 {props.headline}
