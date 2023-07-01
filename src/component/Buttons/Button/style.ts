@@ -1,8 +1,7 @@
-import { Hct, Theme, hexFromArgb } from "@material/material-color-utilities";
+import { Theme, hexFromArgb } from "@material/material-color-utilities";
 import { css } from '@emotion/css'
 
 import { 
-    typescales, 
     elevation, 
     getSurfaceColorFromScheme 
 } from "@/style";
@@ -11,7 +10,6 @@ export default (theme: Theme, dark: boolean) => {
     let scheme = dark ? theme.schemes.dark : theme.schemes.light
     return {
         default: css({
-            ...typescales.label.large,
             height: 40,
             padding: '0 24px',
             position: 'relative',
@@ -53,7 +51,6 @@ export default (theme: Theme, dark: boolean) => {
         filled: css({
             padding: '0 24px',
             backgroundColor: hexFromArgb(scheme.primary),
-            color: hexFromArgb(scheme.onPrimary),
             boxSizing: 'border-box',
 
 
@@ -71,7 +68,6 @@ export default (theme: Theme, dark: boolean) => {
 
         tonal: css({
             backgroundColor: hexFromArgb(scheme.secondaryContainer),
-            color: hexFromArgb(scheme.onSecondaryContainer),
 
             '&::after': {
                 backgroundColor: hexFromArgb(scheme.onSecondaryContainer),
@@ -87,7 +83,6 @@ export default (theme: Theme, dark: boolean) => {
         }),
 
         elevated: css({
-            color: hexFromArgb(scheme.primary),
             backgroundColor: hexFromArgb(getSurfaceColorFromScheme(scheme).surface3),
             ...elevation.level1,
 
@@ -102,7 +97,6 @@ export default (theme: Theme, dark: boolean) => {
                 ${hexFromArgb(scheme.outline)}
                 solid 1.4px
                 `,
-            color: hexFromArgb(scheme.primary),
             
             '&::after': {
                 backgroundColor: hexFromArgb(scheme.onSurface),
@@ -112,7 +106,6 @@ export default (theme: Theme, dark: boolean) => {
         text: css({
             background: 'none',
             padding: '0 12px',
-            color: hexFromArgb(scheme.primary),
                         
             '&::after': {
                 backgroundColor: hexFromArgb(scheme.onSurface),
