@@ -5,15 +5,11 @@ import {
   FAB,
   IconButton,
   Surface,
-  ThemeContext,
   Topbar,
+  Typography,
 } from '../src';
 import './style.css'
 import { css } from '@emotion/css';
-import {
-  argbFromHex,
-  themeFromSourceColor
-} from '@material/material-color-utilities';
 
 function App() {
   const [extended, setExtended] = useState(true)
@@ -44,11 +40,17 @@ function App() {
               </span>
             </IconButton>
           }
-
         />
 
-        <div className='buttons' style={{ margin: 4 }}>
-          <Button>Filled</Button>
+        {/* Buttons */}
+        <div style={{ margin: 4 }}
+          className={css({
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            alignContent: 'space-between'
+          })}
+        >
           <Button type='filled'>Filled</Button>
           <Button type='tonal'>Filled Tonal</Button>
           <Button type="elevated">Elevated</Button>
@@ -56,7 +58,9 @@ function App() {
           <Button type='outlined'>Outlined</Button>
           <Button type='text'>Text</Button>
         </div>
-        <div className='FABs'>
+
+        {/* FABs */}
+        <div>
           <span style={{ display: 'flex' }}>
             <FAB type='small'>
               <span className="material-symbols-outlined">
@@ -107,7 +111,9 @@ function App() {
 
 
         </div>
-        <div className='iconButtons' style={{
+
+        {/* IconButtons */}
+        <div style={{
           display: 'flex',
           rowGap: 12,
           flexDirection: 'column',
@@ -166,6 +172,8 @@ function App() {
             </IconButton>
           </div>
         </div>
+
+        {/* Unclickable Card */}
         <div style={{
           display: 'flex',
           flexDirection: 'row',
@@ -175,19 +183,21 @@ function App() {
           <Card
             type='elevated'
             style={{ height: 100, width: '100%' }}>
-            <span>elevated</span>
+            <Typography scale={'title'} level={'medium'}>elevated</Typography>
           </Card>
           <Card
             type='filled'
             style={{ height: 100, width: '100%' }}>
-            <span>filled</span>
+            <Typography scale={'title'} level={'medium'}>filled</Typography>
           </Card>
           <Card
             type='outlined'
             style={{ height: 100, width: '100%' }}>
-            <span>outlined</span>
+            <Typography scale={'title'} level={'medium'}>outlined</Typography>
           </Card>
         </div>
+
+        {/* Clickable Card */}
         <div style={{
           display: 'flex',
           flexDirection: 'row',
@@ -195,23 +205,56 @@ function App() {
           columnGap: 4
         }}>
           <Card
-            onClick={()=>{alert("clicked")}}
+            onClick={() => { alert("clicked") }}
             type='elevated'
             style={{ height: 100, width: '100%' }}>
-            <span>elevated clickable</span>
+            <Typography scale={'title'} level={'medium'}>elevated clickable</Typography>
           </Card>
           <Card
-            onClick={()=>{alert("clicked")}}
+            onClick={() => { alert("clicked") }}
             type='filled'
             style={{ height: 100, width: '100%' }}>
-            <span>filled clickable</span>
+            <Typography scale={'title'} level={'medium'}>filled clickable</Typography>
           </Card>
           <Card
-            onClick={()=>{alert("clicked")}}
+            onClick={() => { alert("clicked") }}
             type='outlined'
             style={{ height: 100, width: '100%' }}>
-            <span>outlined clickable</span>
+            <Typography scale={'title'} level={'medium'}>outlined clickable</Typography>
           </Card>
+        </div>
+
+        {/* Typography */}
+        <div style={{ display: 'flex', flexDirection: 'column', rowGap: 8 }}>
+          <div style={{ columnGap: 16, display: 'flex', alignItems: 'end' }}>
+            <Typography scale={'display'} level={'large'}>display large</Typography>
+            <Typography scale={'display'} level={'medium'}>display medium</Typography>
+            <Typography scale={'display'} level={'small'}>display small</Typography>
+          </div>
+
+          <div style={{ columnGap: 16, display: 'flex', alignItems: 'end' }}>
+            <Typography scale={'headline'} level={'large'}>headline large</Typography>
+            <Typography scale={'headline'} level={'medium'}>headline medium</Typography>
+            <Typography scale={'headline'} level={'small'}>headline small</Typography>
+          </div>
+
+          <div style={{ columnGap: 8, display: 'flex', alignItems: 'end' }}>
+            <Typography scale={'title'} level={'large'}>title large</Typography>
+            <Typography scale={'title'} level={'medium'}>title medium</Typography>
+            <Typography scale={'title'} level={'small'}>title small</Typography>
+          </div>
+
+          <div style={{ columnGap: 8, display: 'flex', alignItems: 'end' }}>
+            <Typography scale={'body'} level={'large'}>body large</Typography>
+            <Typography scale={'body'} level={'medium'}>body medium</Typography>
+            <Typography scale={'body'} level={'small'}>body small</Typography>
+          </div>
+
+          <div style={{ columnGap: 8, display: 'flex', alignItems: 'end' }}>
+            <Typography scale={'label'} level={'large'}>label large</Typography>
+            <Typography scale={'label'} level={'medium'}>label medium</Typography>
+            <Typography scale={'label'} level={'small'}>label small</Typography>
+          </div>
         </div>
       </Surface>
 
