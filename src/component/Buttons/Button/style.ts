@@ -2,8 +2,8 @@ import { Theme, hexFromArgb } from "@material/material-color-utilities";
 import { css } from '@emotion/css'
 
 import { 
-    elevation, 
-    getSurfaceColorFromScheme 
+    elevation,
+    getSurfaceElevationColor,
 } from "@/style";
 
 export default (theme: Theme, dark: boolean) => {
@@ -83,7 +83,7 @@ export default (theme: Theme, dark: boolean) => {
         }),
 
         elevated: css({
-            backgroundColor: hexFromArgb(getSurfaceColorFromScheme(scheme).surface3),
+            backgroundColor: hexFromArgb(getSurfaceElevationColor(scheme, 3)),
             ...elevation.level1,
 
             '&::after': {

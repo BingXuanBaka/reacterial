@@ -2,8 +2,7 @@ import { Hct, Theme, hexFromArgb } from "@material/material-color-utilities";
 import { css } from '@emotion/css'
 
 import { 
-    elevation, 
-    getSurfaceColorFromScheme 
+    getSurfaceElevationColor, 
 } from "@/style";
 
 export default (theme: Theme, dark: boolean) => {
@@ -75,7 +74,7 @@ export default (theme: Theme, dark: boolean) => {
 
             '&.unselected':{
                 color: hexFromArgb(scheme.primary),
-                backgroundColor: hexFromArgb(getSurfaceColorFromScheme(scheme).surface3)
+                backgroundColor: hexFromArgb(getSurfaceElevationColor(scheme, 3))
             },
         }),
 
@@ -90,7 +89,7 @@ export default (theme: Theme, dark: boolean) => {
 
             '&.unselected':{
                 color: hexFromArgb(scheme.primary),
-                backgroundColor: hexFromArgb(getSurfaceColorFromScheme(scheme).surface3)
+                backgroundColor: hexFromArgb(getSurfaceElevationColor(scheme, 3))
             },
         }),
 

@@ -29,25 +29,6 @@ export function getIsDark(): boolean {
     return scheme == 'dark'
 }
 
-export function getSurfaceColorFromScheme(
-    scheme: Scheme
-): {
-    surface1: number,
-    surface2: number,
-    surface3: number,
-    surface4: number,
-    surface5: number,
-} {
-    return {
-        surface1: Blend.cam16Ucs(scheme.surface, scheme.primary, 0.05),
-        surface2: Blend.cam16Ucs(scheme.surface, scheme.primary, 0.08),
-        surface3: Blend.cam16Ucs(scheme.surface, scheme.primary, 0.11),
-        surface4: Blend.cam16Ucs(scheme.surface, scheme.primary, 0.12),
-        surface5: Blend.cam16Ucs(scheme.surface, scheme.primary, 0.14),
-
-    }
-}
-
 export function getSurfaceElevationColor(scheme: Scheme, elevation: 0 | 1 | 2 | 3 | 4 | 5): number{
     switch (elevation) {
         case 1:

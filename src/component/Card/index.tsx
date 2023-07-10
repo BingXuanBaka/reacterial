@@ -6,10 +6,9 @@ import {
 import classNames from "classnames";
 import React, { ReactNode } from "react";
 import {
-    getIsDark,
-    getSurfaceColorFromScheme,
-    getTheme,
-    elevation
+    getSurfaceElevationColor,
+    elevation,
+    getScheme
 } from "@/style";
 
 const println = console.log
@@ -27,9 +26,7 @@ interface CardProps {
 }
 
 export function Card(props: CardProps) {
-    let scheme: Scheme = getIsDark() ?
-        getTheme().schemes.dark :
-        getTheme().schemes.light
+    let scheme: Scheme = getScheme()
 
     return (
         <div style={props.style}
@@ -48,8 +45,7 @@ export function Card(props: CardProps) {
                     props.type == undefined) &&
                 css({
                     backgroundColor: hexFromArgb(
-                        getSurfaceColorFromScheme(scheme)
-                            .surface1
+                        getSurfaceElevationColor(scheme, 1)
                     ),
 
                     ...elevation.level1,
@@ -65,8 +61,7 @@ export function Card(props: CardProps) {
                 props.type == 'filled' &&
                 css({
                     backgroundColor: hexFromArgb(
-                        getSurfaceColorFromScheme(scheme)
-                            .surface4
+                        getSurfaceElevationColor(scheme, 4)
                     ),
 
                     ...elevation.level0,
@@ -95,8 +90,7 @@ export function Card(props: CardProps) {
                     '&:hover': props.onClick != undefined && {
                         ...elevation.level3,
                         backgroundColor: hexFromArgb(
-                            getSurfaceColorFromScheme(scheme)
-                                .surface1
+                            getSurfaceElevationColor(scheme, 1)
                         ),
                     },
 
