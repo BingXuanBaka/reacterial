@@ -11,8 +11,6 @@ import {
     getScheme
 } from "@/style";
 
-const println = console.log
-
 interface CardProps {
     children?: ReactNode,
     className?: string | undefined
@@ -25,7 +23,7 @@ interface CardProps {
     undefined,
 }
 
-export function Card(props: CardProps) {
+export function Card(props: CardProps): JSX.Element {
     let scheme: Scheme = getScheme()
 
     return (

@@ -21,7 +21,7 @@ interface SurfaceProps {
     elevation?: 0 | 1 | 2 | 3 | 4 | 5 | undefined,
 }
 
-export function Surface(props: SurfaceProps) {
+export function Surface(props: SurfaceProps): JSX.Element {
     let scheme: Scheme = getIsDark() ?
         getTheme().schemes.dark :
         getTheme().schemes.light

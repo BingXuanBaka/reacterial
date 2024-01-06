@@ -14,7 +14,7 @@ interface TypographyProps {
     color?: string | number | undefined,
 }
 
-export function Typography(props: TypographyProps) {
+export function Typography(props: TypographyProps): JSX.Element {
     const scaleStyles = useMemo(() => {
         let scale
 

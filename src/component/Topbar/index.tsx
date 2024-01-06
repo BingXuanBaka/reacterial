@@ -17,7 +17,7 @@ interface TopbarProps {
     className?: string,
 }
 
-export function Topbar(props: TopbarProps) {
+export function Topbar(props: TopbarProps): JSX.Element {
     let scheme: Scheme = getIsDark() ?
         getTheme().schemes.dark :
         getTheme().schemes.light
